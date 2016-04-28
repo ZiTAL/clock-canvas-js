@@ -52,12 +52,12 @@
 				}, 0);
 			}
 		};
-		
+
 		var log = function(str)
 		{
 			if(typeof window['console']!='undefined')
 				console.log(str);
-		}
+		};
 
 		loop();
 	};
