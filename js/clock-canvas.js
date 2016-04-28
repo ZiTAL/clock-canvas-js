@@ -3,11 +3,11 @@
 	'use strict';
 
 	var clock = function(element)
-	{		
+	{
 		var fps = 1000 / 60;
 		var ctx = element.getContext('2d');
 		var imgs;
-		
+
 		var cache =
 		{
 			left: element.width / 2,
@@ -16,7 +16,7 @@
 			{
 				s: false,
 				m: true,
-				h: true				
+				h: true
 			},
 			imgs:
 			[]
@@ -59,7 +59,7 @@
 				else
 					tmp = t['s'];
 
-				ang = (tmp * Math.PI / 30);
+				ang = (tmp * Math.PI / 30) + Math.PI;
 			}
 			else if (type === 'm')
 			{
@@ -68,7 +68,7 @@
 				else
 					tmp = 1;
 
-				ang = (t['m'] * Math.PI / 30) + (tmp * Math.PI / (30 * 60));
+				ang = (t['m'] * Math.PI / 30) + (tmp * Math.PI / (30 * 60)) + Math.PI;
 			}
 			else if (type === 'h')
 			{
@@ -76,6 +76,8 @@
 					ang = (t['h'] * Math.PI / 6) + (t['m'] * Math.PI / (6 * 60)) + (t['s'] * Math.PI / (360 * 60));
 				else
 					ang = t['h'] * Math.PI / 6;
+
+				ang = ang + Math.PI;
 			}
 
 			return ang;
@@ -118,22 +120,22 @@
 
 		var drawHour = function(h_ang)
 		{
-			ctx.rotate(Math.PI);			
+			ctx.rotate(Math.PI);
 			ctx.rotate(h_ang);
 			//ctx.translate(-width / 2, -height / 2);
 			ctx.translate(-cache['imgs'][0]['width'], -cache['imgs'][0]['height']);
 
 			ctx.drawImage(imgs[0], 0, 0);
-			
+
 			//ctx.translate(width / 2, height / 2);
 			ctx.translate(cache['imgs'][0]['width'], cache['imgs'][0]['height']);
-			
+
 			ctx.rotate(-h_ang);
 			ctx.rotate(-Math.PI);
 		};
 
 		var drawMinute = function(m_ang)
-		{	
+		{
 			ctx.rotate(Math.PI);
 			ctx.rotate(m_ang);
 			//ctx.translate(-width / 2, -height / 2);
@@ -143,13 +145,13 @@
 
 			//ctx.translate(width / 2, height / 2);
 			ctx.translate(cache['imgs'][1]['width'], cache['imgs'][1]['height']);
-			
+
 			ctx.rotate(-m_ang);
 			ctx.rotate(-Math.PI);
 		};
 
 		var drawSecond = function(s_ang)
-		{	
+		{
 			ctx.rotate(-Math.PI);
 			ctx.rotate(s_ang);
 			//ctx.translate(-width / 2, -height / 2);
@@ -159,7 +161,7 @@
 
 			//ctx.translate(width / 2, height / 2);
 			ctx.translate(cache['imgs'][2]['width'], cache['imgs'][2]['height']);
-			
+
 			ctx.rotate(-s_ang);
 			ctx.rotate(Math.PI);
 		};
@@ -227,7 +229,7 @@
 		};
 
 		var init = function(element)
-		{		
+		{
 			var params = _getParams(element);
 			setAnimations(params);
 
