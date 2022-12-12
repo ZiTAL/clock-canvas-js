@@ -14,7 +14,6 @@
 				images[i] = new Image();
 				images[i].onload = function()
 				{
-					log(this.src + " image loaded");
 					count++;
 				};
 				images[i].onerror = function()
@@ -56,7 +55,7 @@
 		var log = function(str)
 		{
 			if(typeof window['console']!='undefined')
-				console.log(str);
+				console.error(str);
 		};
 
 		loop();

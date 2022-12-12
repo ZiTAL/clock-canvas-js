@@ -7,6 +7,7 @@
 		var fps = 1000 / 60;
 		var ctx = element.getContext('2d');
 		var imgs;
+		var reverse = 1;
 
 		var cache =
 		{
@@ -30,6 +31,9 @@
 
 			for (var i = 0; i < len; i++)
 				params[attr[i]['name']] = attr[i]['value'];
+
+			if(typeof params['reverse'] && params['reverse']==='true')
+				reverse = -1;
 
 			return params;
 		};
@@ -59,7 +63,7 @@
 				else
 					tmp = t['s'];
 
-				ang = (tmp * Math.PI / 30) + Math.PI;
+				ang = reverse * (tmp * Math.PI / 30) + Math.PI;
 			}
 			else if (type === 'm')
 			{
@@ -68,7 +72,7 @@
 				else
 					tmp = 1;
 
-				ang = (t['m'] * Math.PI / 30) + (tmp * Math.PI / (30 * 60)) + Math.PI;
+				ang = reverse * (t['m'] * Math.PI / 30) + (tmp * Math.PI / (30 * 60)) + Math.PI;
 			}
 			else if (type === 'h')
 			{
@@ -77,7 +81,7 @@
 				else
 					ang = t['h'] * Math.PI / 6;
 
-				ang = ang + Math.PI;
+				ang = reverse * ang + Math.PI;
 			}
 
 			return ang;
