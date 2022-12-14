@@ -7,17 +7,17 @@ GPL v3
 # usage
 ```
 <canvas
-	class                   = "clock"
-	width                   = "412"
-	height                  = "412"
-	data-seconds-image      = "img/girosur/seconds.png"
-	data-minutes-image      = "img/girosur/minutes.png"
-	data-hours-image        = "img/girosur/hours.png"
-	data-background-image   = "img/girosur/01.jpg"
-	data-seconds-animation  = "false"
-	data-minutes-animation  = "false"
-	data-hours-animation    = "true"
-	reverse                 = "true">
+    class                   = "clock"
+    width                   = "412"
+    height                  = "412"
+    data-seconds-image      = "img/girosur/seconds.png"
+    data-minutes-image      = "img/girosur/minutes.png"
+    data-hours-image        = "img/girosur/hours.png"
+    data-background-image   = "img/girosur/01.jpg"
+    data-seconds-animation  = "false"
+    data-minutes-animation  = "false"
+    data-hours-animation    = "true"
+    reverse                 = "true">
 </canvas>
 ```	
 
