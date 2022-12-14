@@ -1,10 +1,10 @@
 # clock-canvas-js
 analog clock in javascript/canvas using images
 
-#license
+# license
 GPL v3
 
-#usage
+# usage
 ```
 	<canvas class="clock"
 		width="164"
@@ -21,7 +21,7 @@ GPL v3
 	</canvas>
 ```	
 
-#install
+# install
 ```
 npm install
 
@@ -31,3 +31,7 @@ npm run watch
 # production
 npm run build
 ```
+
+# demo
+
+http://zital-pi.no-ip.org/girosur/
