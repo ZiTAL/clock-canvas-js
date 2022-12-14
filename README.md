@@ -32,6 +32,10 @@ npm run watch
 npm run build
 ```
 
+![girosur 1](https://i.imgur.com/AGIhx7E.png "girosur 1")
+![girosur 2](https://i.imgur.com/hKzUgqC.png "girosur 2")
+![girosur 3](https://i.imgur.com/QyCrnFH.png "girosur 3")
+
 # demo
 
 http://zital-pi.no-ip.org/girosur/
