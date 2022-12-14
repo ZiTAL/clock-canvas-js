@@ -20,3 +20,14 @@ GPL v3
 		data-hours-animation="true">
 	</canvas>
 ```	
+
+#install
+```
+npm install
+
+#development
+npm run watch
+
+# production
+npm run build
+```
